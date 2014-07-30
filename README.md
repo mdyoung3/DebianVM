@@ -17,6 +17,9 @@ cd newProject
 vagrant init
 git init
 git clone https://github.com:The-Outrider/DebianVM.git
+git remote add origin https://github.com:The-Outrider/DebianVM.git
+rm VagrantFile
+git pull origin master
 vagrant up
 (wait)
 vagrant ssh
