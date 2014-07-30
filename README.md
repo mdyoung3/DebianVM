@@ -12,16 +12,16 @@ Requires Vagrant and Git to run, so make sure to install these things.
 General commands are:
 Run Git Bash as Admin
 
-Mkdir newProject
-cd newProject
-vagrant init
-git init
-git clone https://github.com:The-Outrider/DebianVM.git
-git remote add origin https://github.com:The-Outrider/DebianVM.git
-rm VagrantFile
-git pull origin master
-vagrant up
-(wait)
-vagrant ssh
+Mkdir newProject \n
+cd newProject \n 
+vagrant init \n 
+git init \n 
+git clone https://github.com:The-Outrider/DebianVM.git \n 
+git remote add origin https://github.com:The-Outrider/DebianVM.git \n
+rm VagrantFile \n 
+git pull origin master \n 
+vagrant up \n
+(wait) \n 
+vagrant ssh \n
 
 DONE! You have a fully working Debian VM with PHP, MySQL, and Git!
