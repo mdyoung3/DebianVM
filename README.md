@@ -9,9 +9,9 @@ Added into this environment is MySQL, PHP, Apache, PhpmyAdmin, Vim, Curl, Git, a
 
 Requires Vagrant, Git, and VirtualBox 4.3.12 (for Windows 7, maybe 8 also) to run, so make sure to install these things.
 
-http://www.vagrantup.com/downloads
-http://git-scm.com/downloads
-https://www.virtualbox.org/wiki/Download_Old_Builds_4_3
+http://www.vagrantup.com/downloads <br />
+http://git-scm.com/downloads <br />
+https://www.virtualbox.org/wiki/Download_Old_Builds_4_3 <br />
 
 General commands are:
 Run Git Bash as Admin
