@@ -20,8 +20,8 @@ Mkdir [Project Name Here] <br />
 cd [Project Name Here] <br />
 vagrant init <br />
 git init <br />
-git clone https://github.com:The-Outrider/DebianVM.git <br />
-git remote add origin https://github.com:The-Outrider/DebianVM.git <br />
+git clone https://github.com/The-Outrider/DebianVM.git <br />
+git remote add origin https://github.com/The-Outrider/DebianVM.git <br />
 rm VagrantFile <br />
 git pull origin master <br />
 vagrant up <br />
