@@ -1,9 +1,9 @@
 DebianVM
 ========
 
-Vagrant Dev VM
+Vagrant Dev VM (codename Deviant)
 
-This is a simple DevVM verison with Deviant 6.0.8 (Squeezy)
+This is a simple DevVM verison with Debian 6.0.8 (Squeezy)
 
 Added into this environment is MySQL, PHP, Apache, PhpmyAdmin, Vim, Curl, Git, and debconf tools. Highly recommend to change the password after starting up the VM.
 
