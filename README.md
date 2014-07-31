@@ -7,13 +7,17 @@ This is a simple DevVM verison with Deviant 6.0.8 (Squeezy)
 
 Added into this environment is MySQL, PHP, Apache, PhpmyAdmin, Vim, Curl, Git, and debconf tools. Highly recommend to change the password after starting up the VM.
 
-Requires Vagrant and Git to run, so make sure to install these things.
+Requires Vagrant, Git, and VirtualBox 4.3.12 (for Windows 7, maybe 8 also) to run, so make sure to install these things.
+
+http://www.vagrantup.com/downloads
+http://git-scm.com/downloads
+https://www.virtualbox.org/wiki/Download_Old_Builds_4_3
 
 General commands are:
 Run Git Bash as Admin
 
-Mkdir newProject <br />
-cd newProject <br />
+Mkdir [Project Name Here] <br />
+cd [Project Name Here] <br />
 vagrant init <br />
 git init <br />
 git clone https://github.com:The-Outrider/DebianVM.git <br />
@@ -23,5 +27,10 @@ git pull origin master <br />
 vagrant up <br />
 (wait) <br />
 vagrant ssh <br />
-
-DONE! You have a fully working Debian VM with PHP, MySQL, and Git!
+<br />
+DONE! You have a fully working Debian VM with PHP, MySQL, and Git! <br  />
+<br  />
+After initial installation: <br  />
+cd [Project Name Here] <br  />
+vagrant up <br  />
+vagrant ssh <br  />
