@@ -88,19 +88,4 @@ fi
 sudo rm -rf /var/www
 sudo ln -fs /vagrant /var/www
 
-echo "Please select which type of CMS (or none) you want by typing in a # 1-2, followed by [ENTER]:"
-echo "1) No CMS"
-echo "2) Drupal 7"
-read select
-
-case select in
-    1)
-        echo "Thank you for using this Vagrant Install, enjoy your new environment"
-        exit
-        ;;
-    2)
-        /bin/bash /vagrant/drupal-addon.sh
-        ;;
-    *)
-        echo "Not a valid selection, please select one of the given options"
-esac
+echo "Your Virtual Machine is now ready, thank you for installing Deviant by David C. Rynearson at ASU OKED"
