@@ -88,24 +88,19 @@ fi
 sudo rm -rf /var/www
 sudo ln -fs /vagrant /var/www
 
-## Installing Drupal (Maybe in the future I break this into a seperate script)
-cd /vagrant
-echo 'What would you like to call your new project'
-read PROJECT_NAME
-echo 'Project Name: $PROJECT_NAME accepted'
-echo 'Beginning Installation of Default Drupal installation and modules'
+echo "Please select which type of CMS (or none) you want by typing in a # 1-2, followed by [ENTER]:"
+echo "1) No CMS"
+echo "2) Drupal 7"
+read select
 
-wget http://ftp.drupal.org/files/projects/drupal-x.x.tar.gz
-tar -xzvf drupal-x.x.tar.gz
-# Cleanup
-rm drupal-7.3.tar.gz
-mv drupal-7.3/* $PROJECT_NAME
-sudo rm -r drupal-7-3
-
-# Drush Time
-sudo pear channel-discover pear.drush.org
-sudo pear install drush/drush
-
-cd $PROJECT_NAME
-
-
+case select in
+    1)
+        echo "Thank you for using this Vagrant Install, enjoy your new environment"
+        exit
+        ;;
+    2)
+        /bin/bash /vagrant/drupal-addon.sh
+        ;;
+    *)
+        echo "Not a valid selection, please select one of the given options"
+esac
