@@ -98,3 +98,4 @@ sudo rm -rf /var/www
 sudo ln -fs /vagrant /var/www
 
 echo "Your Virtual Machine is now ready, thank you for installing Project Deviant by David C. Rynearson at ASU OKED"
+exit
