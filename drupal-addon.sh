@@ -1,5 +1,7 @@
 #!/bin/bash
-
+###Creating Aliases
+alias home="cd /vagrant"
+home
 ## Installing Drupal
 echo 'What would you like to call your new project'
 read PROJECT_NAME
@@ -15,6 +17,8 @@ if test -d "$PROJECT_NAME"; then
 else
   mkdir $PROJECT_NAME
 fi
+alias drupalhome="cd /vagrant/$PROJECT_NAME"
+drupalhome
 echo "Project Name: $PROJECT_NAME accepted"
 echo "Beginning Installation of Default Drupal installation and modules"
 
