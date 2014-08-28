@@ -88,13 +88,13 @@ fi
 ## Installing Capistrano and all requirements for deployment
 #Maybe this isn't needed for all machines, will consider making this another seperate script also.
 #Side note, this also takes a long time.... hella long time
-sudo \curl -L https://get.rvm.io | bash -s stable --rails
-source /usr/local/rvm/scripts/rvm
-
-
-gem install capistrano
-gem install capistrano-ext
-
+if [! cap version];
+then
+    sudo \curl -L https://get.rvm.io | bash -s stable --rails
+    source /usr/local/rvm/scripts/rvm
+    gem install capistrano
+    gem install capistrano-ext
+fi
 sudo rm -rf /var/www
 sudo ln -fs /vagrant /var/www
 

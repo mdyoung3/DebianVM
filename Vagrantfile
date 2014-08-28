@@ -7,7 +7,6 @@ VAGRANTFILE_API_VERSION = "2"
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.box = "chef/debian-6.0.8"
   config.vm.provision :shell, path: "bootstrap.sh"
-  config.vm.provision :shell, path: "ssh-forward.sh", privileged: false
   config.vm.network :forwarded_port, host: 4567, guest: 80
   config.ssh.forward_agent = true
 end
