@@ -1,4 +1,5 @@
 #!/bin/bash
+#Variables used for testing
 
 APPENV=local
 DBHOST=localhost
