@@ -28,6 +28,11 @@ sudo apt-get update
         echo "Apache Failed or is already installed"
     fi
 
+#Configure Apache2
+    sudo a2enmod rewrite
+    sudo sed -i 11s/None/All/ /etc/apache2/sites-available/default
+    sudo service apache2 restart
+
 #Install assorted tools for version control and file editing
     sudo apt-get install -y -f vim curl git debconf-utils
     if git --version 
