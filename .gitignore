@@ -1,1 +1,5 @@
-yellow/
+projects
+.bash_aliases
+.idea
+.vagrant
+
