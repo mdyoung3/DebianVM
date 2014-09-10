@@ -181,6 +181,7 @@ float: right;
 /*news*/
 section#block-views-news-block {
 margin: 330px 0 0 14px;
+width: 175px;
 }
 #block-views-news-block h2 {
 text-align: right;
