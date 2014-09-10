@@ -119,6 +119,11 @@ margin: 0 30px 0 0;
 #main-menu a.active {
 color: #fdb813;
 }
+/*nice menus*/
+ul.nice-menu li a.active { 
+    color: yellow; 
+    background: black;
+  }
 div#site-slogan {
 display: none;
 }
