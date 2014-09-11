@@ -33,6 +33,7 @@ $result = $view->result;
 $news = array();
 
 
+<<<<<<< HEAD
 print "<h2>Welcome</h2>
 <h4>Our Vision:</h4>
 
@@ -41,6 +42,8 @@ Our vision is to evolve and leverage the Flexible Electronics and Display Center
 <h4>Our Mission:</h4>
 
 Our mission is to advance full-color, video rate, flexible display technology and catalyze development of a vibrant flexible display and flexible electronics industry to produce integrated electronic systems with advanced functionality.  The FDC will collaborate with government, academia and industry to provide comprehensive flexible electronics capabilities that bridge the high risk, resource intensive gap between innovation and product development in an information-secure environment for process, tool, and materials co-development and evaluation.  Integral to our mission is integrating the concept of sustainable microelectronics processing into all FDC activities.";
+=======
+>>>>>>> b31f77992bbca9dac379964c1ce3ac0a3bd1377a
 
 print "<div id='video-links'>";
 
@@ -49,19 +52,29 @@ foreach($result as $k => $v) {
 $title = $v->node_title;
 $link = $v->field_field_video_brochure_link[0]['raw']['value'];	
 
+<<<<<<< HEAD
 print "<a href=$link>" . $title . "</a> &nbsp;&nbsp;/ &nbsp;&nbsp; ";
 /*print "<pre>";
 print_r($result);
 print "</pre>";*/
+=======
+print "<a href=$link>" . $title . "</a>";
+print "<pre>";
+//print_r($result);
+print "</pre>";
+>>>>>>> b31f77992bbca9dac379964c1ce3ac0a3bd1377a
 }
 
 print "</div>";
 
+<<<<<<< HEAD
 print "<div id='brochure_content'>";
 
 print "<a href='/flexdisplay/sites/all/themes/flexdisplay/flexdisplay/FDC_brochure_february_2012.pdf'><img src='/flexdisplay/sites/all/themes/flexdisplay/images/brochure-mini.png' alt='center brochure'/></a> ";
 
 print"</div>";
 
+=======
+>>>>>>> b31f77992bbca9dac379964c1ce3ac0a3bd1377a
 ?>
 

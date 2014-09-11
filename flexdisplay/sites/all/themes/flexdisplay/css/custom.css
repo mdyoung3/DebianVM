@@ -31,6 +31,7 @@ text-decoration:underline;
 #page{
 width: 100%;
 }
+<<<<<<< HEAD
 /*.front div#main-wrapper {
 background: #fff url(../images/front_leftside_bg.jpg) repeat-y;
 background-size: 22.716%;
@@ -41,6 +42,18 @@ background: transparent url(../images/page_content_bg.png) bottom no-repeat;
 .front div#main {
 background: url(../images/front-content-2013.jpg) left top 28px no-repeat;
 background-size: 84%;
+=======
+.front div#main-wrapper {
+background: #fff url(../images/front_leftside_bg.jpg) repeat-y;
+background-size: 22.716%;
+}
+div#main-wrapper {
+background: url(/sites/all/themes/flexdisplay/images/page_content_bg.jpg) bottom left no-repeat;
+}
+.front div#main {
+background: url(../images/front-content-2014.jpg) left top 28px no-repeat;
+background-size: 92%;
+>>>>>>> b31f77992bbca9dac379964c1ce3ac0a3bd1377a
 }
 #content,
 #navigation,
@@ -86,6 +99,7 @@ font-size: 2.4em;
 margin: 40px 0 30px 0;
 font-weight: 100;
 }
+<<<<<<< HEAD
 h3{
 font-size: 1.67em;
 border-bottom: 1px solid #ccc;
@@ -105,6 +119,11 @@ font-size: 1.16em;
 padding: 5px 0;
 margin-bottom: .25em;
 }
+=======
+h4 {
+margin: 6px 0;
+}
+>>>>>>> b31f77992bbca9dac379964c1ce3ac0a3bd1377a
 p {
 margin: .75em 0;
 }
@@ -114,16 +133,23 @@ font-weight: bold;
 }
 #main-menu a {
 color: #fff;
+<<<<<<< HEAD
 margin: 0 30px 0 0;
+=======
+margin: 0 24px 0 0;
+>>>>>>> b31f77992bbca9dac379964c1ce3ac0a3bd1377a
 }
 #main-menu a.active {
 color: #fdb813;
 }
+<<<<<<< HEAD
 /*nice menus*/
 ul.nice-menu li a.active { 
     color: yellow; 
     background: black;
   }
+=======
+>>>>>>> b31f77992bbca9dac379964c1ce3ac0a3bd1377a
 div#site-slogan {
 display: none;
 }
@@ -141,7 +167,10 @@ margin: 0 0 94px 0;
 div#block-block-2,
 #block-views-videos-block {
 padding: 0 66px;
+<<<<<<< HEAD
 margin: 300px 10px;
+=======
+>>>>>>> b31f77992bbca9dac379964c1ce3ac0a3bd1377a
 }
 div#block-block-2 {
 margin: 300px 0 0 0;
@@ -176,6 +205,7 @@ background: #fff;
 #block-block-4 p{
 margin:0;
 }
+<<<<<<< HEAD
 #block-block-4 img{
 width: 100%;
 }
@@ -187,6 +217,10 @@ float: right;
 section#block-views-news-block {
 margin: 330px 0 0 14px;
 width: 175px;
+=======
+section#block-views-news-block {
+margin: 330px 0 0 14px;
+>>>>>>> b31f77992bbca9dac379964c1ce3ac0a3bd1377a
 }
 #block-views-news-block h2 {
 text-align: right;
@@ -205,6 +239,7 @@ text-align: right;
 }
 .news-date{
 font-weight: 100;
+<<<<<<< HEAD
 }
 /*tables*/
 thead{
@@ -225,4 +260,6 @@ padding: 10px 10px 10px 30px;
 }
 span.un_bold{
 font-weight: 100;
+=======
+>>>>>>> b31f77992bbca9dac379964c1ce3ac0a3bd1377a
 }
