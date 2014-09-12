@@ -92,6 +92,9 @@ then
 	sudo apt-get -y install phpmyadmin
 fi
 
+# Switch on garabage collection for Drupal
+        sudo sed -i s/'session.gc_probability = 0'/'session.gc_probability = 1'/ /etc/php5/apache2/php.ini
+
 ## Installing Capistrano and all requirements for deployment
 #Maybe this isn't needed for all machines, will consider making this another seperate script also.
 #Side note, this also takes a long time.... hella long time
