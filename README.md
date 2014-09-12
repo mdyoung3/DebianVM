@@ -1,6 +1,6 @@
 DebianVM
 ========
-
+Wayne is a badass
 Vagrant Dev VM (codename Deviant)
 
 This is a simple DevVM verison with Debian 6.0.8 (Squeezy)
