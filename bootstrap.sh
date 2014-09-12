@@ -34,6 +34,7 @@ sudo apt-get update
     sudo service apache2 restart
 
 #Install assorted tools for version control and file editing
+    sudo apt-get install -y unzip
     sudo apt-get install -y -f vim curl git debconf-utils
     if git --version 
     then
