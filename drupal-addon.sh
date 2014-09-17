@@ -17,8 +17,6 @@ if test -d "$PROJECT_NAME"; then
 else
   mkdir $PROJECT_NAME
 fi
-alias drupalhome="cd /vagrant/$PROJECT_NAME"
-drupalhome
 echo "Project Name: $PROJECT_NAME accepted"
 echo "Beginning Installation of Default Drupal installation and modules"
 
@@ -26,7 +24,12 @@ wget http://ftp.drupal.org/files/projects/drupal-7.3.tar.gz
 tar -xzvf drupal-7.3.tar.gz
 # Cleanup
 rm drupal-7.3.tar.gz
+mkdir drupal-7.3/sites/default/files
+chmod 777 drupal-7.3/sites/default/files
+cp drupal-7.3/sites/default/default.settings.php drupal-7.3/sites/default/settings.php
 mv drupal-7.3/* $PROJECT_NAME
+mv $PROJECT_NAME projects
+echo "Moved $PROJECT_NAME into your projects folder"
 sudo rm -r drupal-7.3
 
 echo "Drupal has Successfully Installed, beginning drupal addons"

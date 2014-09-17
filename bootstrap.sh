@@ -105,6 +105,15 @@ then
     gem install capistrano
     gem install capistrano-ext
 fi
+
+## Creating cronjob for database backup.
+crontab -l > mycron
+#echo new cron into cron file
+echo "0 */2 * * * /vagrant/db-backup.sh" >> mycron
+#install new cron file
+crontab mycron
+rm mycron
+
 sudo rm -rf /var/www
 sudo ln -fs /vagrant /var/www
 
