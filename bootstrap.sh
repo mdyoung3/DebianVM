@@ -114,6 +114,8 @@ echo "0 */2 * * * /vagrant/db-backup.sh" >> mycron
 crontab mycron
 rm mycron
 
+
+
 sudo rm -rf /var/www
 sudo ln -fs /vagrant/projects /var/www
 
