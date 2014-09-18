@@ -114,6 +114,11 @@ echo "0 */2 * * * /vagrant/db-backup.sh" >> mycron
 crontab mycron
 rm mycron
 
+touch ~/.my.cnf
+echo "[mysqldump]" >> ~/.my.cnf
+echo "user=root" >> ~/.my.cnf
+echo "password=oked_dev" >> ~/.my.cnf
+
 sudo rm -rf /var/www
 sudo ln -fs /vagrant/projects /var/www
 

@@ -21,6 +21,5 @@ echo "Database found! Beginning Copy"
 fi
 
 ## Backup all current Databases
-"[mysqldump]\n user=root\n password=oked_dev" > ~/.my.cnf
-mysqldump -u root password '$PASSWORD' -- all-databases > /vagrant/Backups/${DATE}-dbbackup.sql 
+mysqldump --all-databases > /vagrant/Backups/${DATE}-dbbackup.sql 
 ## Verify file is saved in correct folder 
