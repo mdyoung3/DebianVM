@@ -1,4 +1,13 @@
 #!/bin/bash
+echo "You must run this script as root/sudo!!!"
+rootcheck () {
+    if [ $(id -u) != "0" ]
+    then
+        exec sudo "$0" "$@"  # Modified as suggested below.
+        exit $?
+    fi
+}
+rootcheck
 DATE=$(date +%s)
 
 ## Check for Database backup folder
@@ -13,7 +22,7 @@ fi
 echo "Please Enter in your database password for the root user"
 read PASSWORD
 
-if [ ! mysqladmin -u root password '$PASSWORD']; then
+if [ ! mysqladmin -u root -password '$PASSWORD']; then
   echo "Database not found, exiting script"
   exit
 else
