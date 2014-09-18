@@ -1,11 +1,26 @@
 #!/bin/bash
 DATE=$(date +%s)
+
 ## Check for Database backup folder
-if !
+
+if [ ! -d "/vagrant/Backups" ]; then
+  echo "Directory doesn't exist, making Backups Folder"
+  mkdir /vagrant/Backups
+fi
+
 ## Check for Database installation
 
-## Backup all current Databases
-date +%s
+echo "Please Enter in your database password for the root user"
+read PASSWORD
 
-mysqldump -- all-databases > ${DATE}-dbbackup.sql 
+if [ ! mysqladmin -u root password '$PASSWORD']; then
+  echo "Database not found, exiting script"
+  exit
+else
+echo "Database found! Beginning Copy"
+fi
+
+## Backup all current Databases
+"[mysqldump]\n user=root\n password=oked_dev" > ~/.my.cnf
+mysqldump -u root password '$PASSWORD' -- all-databases > /vagrant/Backups/${DATE}-dbbackup.sql 
 ## Verify file is saved in correct folder 
