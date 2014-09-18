@@ -17,17 +17,21 @@ if test -d "$PROJECT_NAME"; then
 else
   mkdir $PROJECT_NAME
 fi
-alias drupalhome="cd /vagrant/$PROJECT_NAME"
+alias drupalhome="cd /vagrant/projects_test/$PROJECT_NAME"
 drupalhome
 echo "Project Name: $PROJECT_NAME accepted"
 echo "Beginning Installation of Default Drupal installation and modules"
 
-wget http://ftp.drupal.org/files/projects/drupal-7.3.tar.gz
-tar -xzvf drupal-7.3.tar.gz
+wget http://ftp.drupal.org/files/projects/drupal-7.31.tar.gz 
+echo "download complete"
+
+tar -xzvf drupal-7.31.tar.gz
+echo "file unpacked"
+
 # Cleanup
-rm drupal-7.3.tar.gz
-mv drupal-7.3/* $PROJECT_NAME
-sudo rm -r drupal-7.3
+rm drupal-7.31.tar.gz
+mv drupal-7.31/* $PROJECT_NAME
+sudo rm -r drupal-7.31
 
 echo "Drupal has Successfully Installed, beginning drupal addons"
 
