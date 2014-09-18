@@ -1,7 +1,10 @@
 #!/bin/bash
 ###Creating Aliases
 alias home="cd /vagrant"
+alias drupal="cd /vagrant/drupal*"
+
 home
+
 ## Installing Drupal
 echo 'What would you like to call your new project'
 read PROJECT_NAME
@@ -18,27 +21,11 @@ else
   mkdir $PROJECT_NAME
 fi
 echo "Project Name: $PROJECT_NAME accepted"
-echo "Beginning Installation of Default Drupal installation and modules"
 
-wget http://ftp.drupal.org/files/projects/drupal-7.3.tar.gz
-tar -xzvf drupal-7.3.tar.gz
-# Cleanup
-rm drupal-7.3.tar.gz
-mkdir drupal-7.3/sites/default/files
-chmod 777 drupal-7.3/sites/default/files
-cp drupal-7.3/sites/default/default.settings.php drupal-7.3/sites/default/settings.php
-mv drupal-7.3/* $PROJECT_NAME
-mv $PROJECT_NAME projects
-echo "Moved $PROJECT_NAME into your projects folder"
-sudo rm -r drupal-7.3
-
-echo "Drupal has Successfully Installed, beginning drupal addons"
-
-# Drush Time
+##First need to install Drush
 
 if drush status; then
   echo "Drush already installed, skipping installation"
-  exit
 else
   if pear version; then
     echo "Pear already installed"
@@ -50,5 +37,24 @@ else
   fi
 fi
 
+
+echo "Beginning Installation of Default Drupal installation and modules"
+
+drush dl drupal
+
+##Find Drupal folder
+drupal
+DRUPAL=$(pwd)
+home
+# Cleanup
+mkdir $DRUPAL/sites/default/files
+chmod 777 $DRUPAL/sites/default/files
+cp $DRUPAL/sites/default/default.settings.php $DRUPAL/sites/default/settings.php
+mv $DRUPAL/* $PROJECT_NAME
+mv $PROJECT_NAME projects
+echo "Moved $PROJECT_NAME into your projects folder"
+sudo rm -r $DRUPAL
+
+echo "Drupal has Successfully Installed, beginning drupal addons"
 echo "Installation Complete, please enjoy your new Drupal installation"
 exit
