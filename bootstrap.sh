@@ -122,5 +122,11 @@ echo "password=oked_dev" >> ~/.my.cnf
 sudo rm -rf /var/www
 sudo ln -fs /vagrant/projects /var/www
 
+##Recreate databases if file exists
+if [-f /vagrant/Backups/*.sql] then
+   echo "Found a Database, importing into mysql"
+   BACKUP='ls /vagrant/Backups/*.sql -1t|head -n 1'
+   mysql < $BACKUP
+fi
 echo "Your Virtual Machine is now ready, thank you for installing Project Deviant by David C. Rynearson at ASU OKED"
 exit
