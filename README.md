@@ -16,21 +16,10 @@ https://www.virtualbox.org/wiki/Download_Old_Builds_4_3 <br />
 General commands are:
 Run Git Bash as Admin
 
-Mkdir [Project Name Here] <br />
-cd [Project Name Here] <br />
-vagrant init <br />
-git init <br />
 git clone git@github.com/The-Outrider/DebianVM.git <br />
-git remote add origin https://github.com/The-Outrider/DebianVM.git <br />
-rm VagrantFile <br />
-git pull origin master <br />
 vagrant up <br />
 (wait) <br />
 vagrant ssh <br />
 <br />
 DONE! You have a fully working Debian VM with PHP, MySQL, and Git! <br  />
 <br  />
-After initial installation: <br  />
-cd [Project Name Here] <br  />
-vagrant up <br  />
-vagrant ssh <br  />
