@@ -105,8 +105,17 @@ then
     gem install capistrano
     gem install capistrano-ext
 fi
+
+## Creating cronjob for database backup.
+crontab -l > mycron
+#echo new cron into cron file
+echo "0 */2 * * * /vagrant/db-backup.sh" >> mycron
+#install new cron file
+crontab mycron
+rm mycron
+
 sudo rm -rf /var/www
-sudo ln -fs /vagrant /var/www
+sudo ln -fs /vagrant/projects /var/www
 
 echo "Your Virtual Machine is now ready, thank you for installing Project Deviant by David C. Rynearson at ASU OKED"
 exit
