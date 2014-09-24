@@ -98,12 +98,21 @@ fi
 ## Installing Capistrano and all requirements for deployment
 #Maybe this isn't needed for all machines, will consider making this another seperate script also.
 #Side note, this also takes a long time.... hella long time
-if [! cap version];
-then
+echo "Beginning installation of capistrano, This will take nearly forever."
+
+if ! rvm --version; then
     sudo \curl -L https://get.rvm.io | bash -s stable --rails
-    source /usr/local/rvm/scripts/rvm
+    source /home/vagrant/.rvm/scripts/rvm
+else
+    echo "rvm installed, skipping installation"
+fi
+
+if ! cap --version ;
+then
     gem install capistrano
     gem install capistrano-ext
+else
+    echo "Capistrano already installed, skipping"
 fi
 
 ## Creating cronjob for database backup.
@@ -114,16 +123,16 @@ echo "0 */2 * * * /vagrant/db-backup.sh" >> mycron
 crontab mycron
 rm mycron
 
-touch ~/.my.cnf
-echo "[mysqldump]" >> ~/.my.cnf
-echo "user=root" >> ~/.my.cnf
-echo "password=oked_dev" >> ~/.my.cnf
-
+touch /home/vagrant/.my.cnf
+echo "[mysqldump]" >> /home/vagrant/.my.cnf
+echo "user=root" >> /home/vagrant/.my.cnf
+echo "password=oked_dev" >> /home/vagrant/.my.cnf
+cp /home/vagrant/db-backup.sh /etc/cron.daily/
 sudo rm -rf /var/www
 sudo ln -fs /vagrant/projects /var/www
 
 ##Recreate databases if file exists
-if [-f /vagrant/Backups/*.sql] then
+if -f /vagrant/Backups/*.sql; then
    echo "Found a Database, importing into mysql"
    BACKUP='ls /vagrant/Backups/*.sql -1t|head -n 1'
    mysql < $BACKUP
