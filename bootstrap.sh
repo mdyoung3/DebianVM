@@ -115,9 +115,9 @@ crontab mycron
 rm mycron
 
 touch ~/.my.cnf
-echo "[mysqldump]" >> ~/.my.cnf
-echo "user=root" >> ~/.my.cnf
-echo "password=oked_dev" >> ~/.my.cnf
+printf "[mysqldump]\n" >> ~/.my.cnf
+printf "user=root\n" >> ~/.my.cnf
+printf "password=oked_dev\n" >> ~/.my.cnf
 
 sudo rm -rf /var/www
 sudo ln -fs /vagrant/projects /var/www

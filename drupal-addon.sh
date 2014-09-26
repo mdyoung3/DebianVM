@@ -54,7 +54,9 @@ mv $DRUPAL/* $PROJECT_NAME
 mv $PROJECT_NAME projects
 echo "Moved $PROJECT_NAME into your projects folder"
 sudo rm -r $DRUPAL
-
+DATABASE_NAME="$PROJECT_NAME.dev
+mysql CREATE DATABASE $DATABASE_NAME
+drush site-install standard --db-url=mysql://[root]:[oked_dev]@localhost/[$DATABASE_NAME] --site-name=$PROJECT_NAME
 echo "Drupal has Successfully Installed, beginning drupal addons"
 echo "Installation Complete, please enjoy your new Drupal installation"
 exit
