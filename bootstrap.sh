@@ -123,10 +123,18 @@ sudo rm -rf /var/www
 sudo ln -fs /vagrant/projects /var/www
 
 ##Recreate databases if file exists
-if [-f /vagrant/Backups/*.sql] then
+#Check if a file exists first.
+if [ -f /vagrant/Backups/*.sql ] ;
+then
    echo "Found a Database, importing into mysql"
-   BACKUP='ls /vagrant/Backups/*.sql -1t|head -n 1'
-   mysql < $BACKUP
+   #Store that file in a variable
+   BACKUP=$( ls /vagrant/Backups/*.sql -1t | head -n 1)
+   #Do the backup with standard user/pass for mysql
+   mysql --user=root --password=oked_dev < $BACKUP
+   echo "SQL Dump recreation successful, please enjoy"
+   #TODO Check for Database already and verify after the fact.
+else
+   echo "No Database backup Found"
 fi
 echo "Your Virtual Machine is now ready, thank you for installing Project Deviant by David C. Rynearson at ASU OKED"
 exit
