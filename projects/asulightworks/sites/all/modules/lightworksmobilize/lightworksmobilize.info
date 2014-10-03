@@ -1,0 +1,12 @@
+; $Id: lightworksmobilize.info,v 1.7.2.2 2008/09/18 18:39:45 hass Exp $
+name = "LightWorks Mobilize"
+description = Sends LightWorks Website to the mobile version
+core = 6.x
+package = Mobilify
+
+; Information added by drupal.org packaging script on 2009-04-01
+version = "6.x-2.2"
+core = "6.x"
+project = "lightworksmobilize"
+datestamp = "1238610067"
+

@@ -1,0 +1,15 @@
+name = lightworksmobile
+description = Theme for Project
+core = 6.x
+engine = phptemplate
+stylesheets[all][] = global.css
+
+regions[right] = Right Sidebar
+regions[social] = Social Media
+
+; Information added by drupal.org packaging script on 2011-08-29
+version = "6.x-3.2"
+core = "6.x"
+project = "lightworksmobile"
+datestamp = "1314651416"
+
