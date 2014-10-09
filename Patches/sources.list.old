@@ -1,0 +1,5 @@
+deb http://http.debian.net/debian/ squeeze main contrib non-free
+deb-src http://http.debian.net/debian/ squeeze main contrib non-free
+
+deb http://http.debian.net/debian squeeze-lts main contrib non-free
+deb-src http://http.debian.net/debian squeeze-lts main contrib non-free
