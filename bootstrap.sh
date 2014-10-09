@@ -64,7 +64,7 @@ echo "Begninning PHP installation"
     fi
 
 #Installing PhpMyAdmin
-if [ ! -f /etc/phpmyadmin/config.inc.php ];
+if [ ! -f /etc/phpmyadmin/config.inc.php ] ;
 then
 
 	# Used debconf-get-selections to find out what questions will be asked
@@ -98,7 +98,7 @@ fi
 ## Installing Capistrano and all requirements for deployment
 #Maybe this isn't needed for all machines, will consider making this another seperate script also.
 #Side note, this also takes a long time.... hella long time
-if [! cap version];
+if [ ! cap version ] ;
 then
     sudo \curl -L https://get.rvm.io | bash -s stable --rails
     source /usr/local/rvm/scripts/rvm
