@@ -96,6 +96,7 @@ fi
 
         sudo sed -i s/'session.gc_probability = 0'/'session.gc_probability = 1'/ /etc/php5/apache2/php.ini
         sudo sed -i s/'upload_max_filesize = 2M'/'upload_max_filesize = 8M'/ /etc/php5/apache2/php.ini
+    sudo service apache2 restart
 
 
 
