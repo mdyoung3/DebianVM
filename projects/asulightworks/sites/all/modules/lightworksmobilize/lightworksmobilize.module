@@ -1,0 +1,28 @@
+<?php
+// $Id: lightworksmobile.module,v 1.19.2.10 2009/04/01 18:10:36 hass Exp $
+
+/*
+ * @file
+ * Drupal Module: lightworksmobile
+ *
+ * @author: Esser Design <www.esserdesign.com> / Jason Geiger <@jasonjgeiger>
+ */
+function lightworksmobilize_init() {
+    global $user, $mobileObj, $custom_theme;
+	
+	//mobileness
+	include_once('mobile-detect.php');
+	$mobileObj = new Mobile_Detect();
+	$mobileObj->excludeTablets();
+		
+	//CHANGE THE THEME IF YOU REALLY MUST
+	/*
+    if ($mobileObj->isMobile()) {
+		$custom_theme = 'lightworksmobile';
+		init_theme();
+    }else{
+		$custom_theme = 'lightworks';
+		init_theme();
+	}
+	*/
+}

@@ -94,8 +94,13 @@ then
 	sudo apt-get -y install phpmyadmin
 fi
 
-# Switch on garabage collection for Drupal
+# Switch on garabage collection for Drupal and configure PHP
+
         sudo sed -i s/'session.gc_probability = 0'/'session.gc_probability = 1'/ /etc/php5/apache2/php.ini
+        sudo sed -i s/'upload_max_filesize = 2M'/'upload_max_filesize = 8M'/ /etc/php5/apache2/php.ini
+    sudo service apache2 restart
+
+
 
 ## Installing Capistrano and all requirements for deployment
 #Maybe this isn't needed for all machines, will consider making this another seperate script also.

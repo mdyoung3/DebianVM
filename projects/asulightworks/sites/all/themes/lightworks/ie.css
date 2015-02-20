@@ -1,0 +1,16 @@
+/*
+	theme - ASULIGHTWORKS
+	ie.css
+	built by Esser Design - Jason Geiger (@jasonjgeiger)
+	built on WSC3 CSS standards
+	
+	Copyright 2011. All Rights Reserved.	
+*/
+/****************************************|ASU HEADER/FOOTER|****************************************/
+#asu_search_module {height:17px;float:none; text-align:right;}
+#asu_search_module input.asu_search_button {border:0;padding:3px 0px;line-height:12px;}
+.asu_search_selection {position:relative; top:-2px;}
+/****************************************|MASTHEAD|****************************************/
+#masthead h1 {line-height:72px;}
+#masthead .next,#masthead .prev{color:#FFF;}
+#navigation,#breadcrumbs,.content{background-color:#FFF;}

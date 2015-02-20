@@ -1,0 +1,113 @@
+/*
+	theme - ASULIGHTWORKS
+	mobile.css
+	built by Esser Design - Jason Geiger (@jasonjgeiger)
+	built on WSC3 CSS standards
+	
+	Copyright 2011. All Rights Reserved.	
+*/
+/****************************************|STRUCTURE|****************************************/
+#background,#container{width:100%;}
+#asu_hdr,#page{width:100%; min-width:100%;}
+#breadcrumbs{width:100%;}
+#main{float:none; width:100%;}
+#main .content{margin:0 auto;}
+#aside{width:100%;}
+.widget{width:100%;}
+#footer{width:100%;}
+/****************************************|DISPLAY|****************************************/
+#header,#page{overflow:hidden;}
+#asu_hdr{height:40px;}
+#asu_nav_wrapper,#asu_search_module,#breadcrumbs{display:none;}
+/****************************************|POSITION|****************************************/
+#asu_logo{float:none;}
+#masthead,#aside,.content{margin-left:0;}
+#masthead{margin-top:0;}
+.c{float:none; width:100% !important;}
+#content{margin-top:0;}
+/****************************************|IMAGES|****************************************/
+#background,#container{background:none;}
+#content img{border:0;}
+.continue{display:block; height:20px; width:100%; background:url(grfx/grfx.gif) 50% -228px no-repeat;}
+.continue a{display:block; height:20px; width:100%; text-indent:-999em;}
+/****************************************|NAVIGATION|****************************************/
+#navigation{margin:0; height:auto; width:100%}
+#navigation li.primary{float:left; margin:0; padding:0; width:50%; background:none;}
+#navigation li.primary a.parent{margin:0; padding:0; text-align:center; border-width:1px 1px 0 0; border-style:solid; border-color:#e8e8e8;}
+.gohome{
+	position:absolute;
+	top:7px;
+	right:7px;
+	color: white;
+	display: block;
+	font-size: 13px;
+	line-height:22px;
+	min-width:22px;
+	text-indent:-999em;
+	text-decoration: none;
+	-moz-border-radius:3px;
+	-webkit-border-radius:3px;
+	border-radius:3px;
+	background-image:url(grfx/grfx.gif);
+	background-position:0 -206px;
+	background-color:#e8e8e8;
+}
+/****************************************|MASTHEAD|****************************************/
+#masthead .next, #masthead .prev{display:none;}
+#masthead, #masthead .children{height:165px; width:100%; overflow:hidden;}
+#masthead li.child{
+	position:relative;
+	display:block;
+	float:left;
+	height:165px;
+	width:100%;
+	overflow:hidden;
+}
+#masthead li.child .holder{
+	position:relative;
+	height:165px;
+	width:100%;
+}
+#masthead .header{position:absolute; left:24px; bottom:12px;}
+#masthead h1{margin-bottom:14px; width:100%; font-size:32px; line-height:32px; letter-spacing: -0.06em; word-spacing: -0.05em; color:#FFF;}
+#masthead h2{width:100%; font-size:12px; line-height:15px; font-weight:normal; color:#FFF;}
+#masthead .overlay{position:absolute; top:0; right:0; width:100%; height:165px; background:url(grfx/masthead-arrows.png) -400px -75px no-repeat; z-index:10;}
+#masthead .hit{position:absolute; display:block; top:0; right:0; width:100%; height:165px; text-indent:-999em; z-index:11;}
+#masthead:hover .overlay,#masthead .overlay:hover{background-position:0 -75px;}
+/****************************************|HOMEPAGE|****************************************/
+/**|Solutions|**/
+#main .content .header h1{
+	font-size: 22px;
+	line-height: 22px;
+}
+.solutions-widget .solution, .initiatives-list .initiative{padding:10px; height:auto;}
+.solutions-widget .thumb,.initiatives-list .thumb,.solutions-list .thumb{float:none; width:100%; overflow:hidden; border: 2px solid white;}
+.solutions-widget .entry,.initiatives-list .entry{margin-left:0; padding:0 5px; height:auto;}
+/**|Initiatives|**/
+.initiatives-list h1,.initiatives-list h2, .initiatives-list h1 a,.initiatives-list h2 a{color:#008ed6 !important;}
+.initiatives-widget{height:auto; width:100%;}
+.initiatives-widget .initiative{position:relative; width:auto; top:auto; left:auto;}
+/****************************************|CONTENT|****************************************/
+.initiative .c, .solution .c{width:100%; overflow:hidden;}
+#main .related-solutions, #main .related-projects{margin-left:0; width:100%;}
+/****************************************|FOOTER|****************************************/
+#asu_footer {margin:0; padding:0; height:auto;}
+#asu_footer li{border:none;}
+#asu_footer,#footer p{text-align:center}
+#asu_footer li{display:inline-block; padding:3px 0; width:100%; text-align:center; border-bottom:1px solid #666;}
+
+/*Simple Mobile*/
+@media only screen and (min-width: 320px) and (max-width: 1024px){}
+/*iPhone*/
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px), (max-width: 480px){
+	
+	
+}
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (orientation:portrait){
+	.solutions-widget .thumb{width:296px;}
+}
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (orientation:landscape){
+	.solutions-widget .thumb{width:456px;}
+}
+/*iPhone 4*/
+@media only screen and (-webkit-min-device-pixel-ratio:2{}
