@@ -42,6 +42,8 @@ sudo apt-get update
     else
         echo "Vim, Curl, and Git, Failed to Install"
     fi
+## Git global config ##
+git config --global core.excludesfile /vagrant/.gitignore_global
 
 echo -e "\n--- Install MySQL specific packages and settings ---\n"
 sudo debconf-set-selections <<< 'mysql-server mysql-server/root_password password oked_dev'

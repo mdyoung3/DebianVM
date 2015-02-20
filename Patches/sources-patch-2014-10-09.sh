@@ -9,4 +9,4 @@ sudo cp /etc/apt/sources.list /vagrant/Patches/sources.list.old
 
 sudo cp /vagrant/Patches/sources.list.new /etc/apt/sources.list
 
-echo "New sources file installed"
+ echo "New sources file installed"
