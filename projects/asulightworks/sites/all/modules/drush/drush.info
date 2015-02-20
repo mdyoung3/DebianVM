@@ -1,8 +1,0 @@
-drush_version=3.4-dev
-
-; Information added by drupal.org packaging script on 2013-09-30
-version = "6.x-3.3+5-dev"
-core = "6.x"
-project = "drush"
-datestamp = "1380571112"
-
