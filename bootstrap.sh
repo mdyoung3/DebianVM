@@ -30,6 +30,7 @@ sudo apt-get update
 
 #Configure Apache2
     sudo a2enmod rewrite
+    sudo a2enmod headers
     sudo sed -i 11s/None/All/ /etc/apache2/sites-available/default
     sudo service apache2 restart
 
@@ -127,7 +128,7 @@ printf "user=root\n" >> ~/.my.cnf
 printf "password=oked_dev\n" >> ~/.my.cnf
 
 sudo rm -rf /var/www
-sudo ln -fs /vagrant/projects /var/www
+sudo ln -fs /vagrant/projects /var/www/domains
 
 ##Recreate databases if file exists
 #Check if a file exists first.
