@@ -1,1 +1,8 @@
 yellow/
+*.tar.gz
+*.tar
+*.dev
+*.txt
+db_backup
+modules_examples
+.idea
