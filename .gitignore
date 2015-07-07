@@ -2,7 +2,10 @@ yellow/
 *.tar.gz
 *.tar
 *.dev
+*.sql.gz
+*.sql
 *.txt
 db_backup
 modules_examples
 .idea
+.vagrant
