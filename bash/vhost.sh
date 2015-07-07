@@ -28,7 +28,7 @@ sudo sed -i 's/webmaster/root/' $domain_name.conf
 sudo sed -i '3i ServerName '$domain_name'.dev' $domain_name.conf
 sudo sed -i 's:<Directory />:<Directory /var/www/'$domain_name'.dev/>:' $domain_name.conf
 sudo sed -i 's:<Directory /var/www/>:<Directory /var/www/'$domain_name'.dev>:' $domain_name.conf
-sudo sed -i 's:DocumentRoot /var/www/:DocumentRoot /var/www/'$domain_name'.dev:' $domain_name.conf
+sudo sed -i 's:DocumentRoot /var/www:DocumentRoot /var/www/'$domain_name'.dev:' $domain_name.conf
 
 #restarts server
 sudo a2ensite $domain_name.conf
