@@ -36,6 +36,13 @@ sudo service apache2 restart
 
 echo "Vhost setup complete. Please be sure to point your host file to the domain as well."
 echo "To access host file in Windows: C:\Windows\System32\etc\host"
-echo "To access the host file on a Mac "
-echo "Once you access the file, please insert the localhost IP and domain name. It would look something like this: '127.0.01 text.dev'"
+echo " "
+
+echo "To access the host file on a Mac, use the following command in terminal"
+echo "sudo vim /etc/host"
+echo " "
+echo "In the host file, please insert the ip address with the domain name."
+echo "For example, 127.0.01 test.dev"
+echo " "
 echo "Please visit $domain_name.dev:[port] to ensure site is working. "
+
