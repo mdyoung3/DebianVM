@@ -94,5 +94,8 @@ fi
 sudo rm -rf /var/www
 sudo ln -fs /vagrant /var/www
 
+sudo sed -i 's/upload_max_filesize = 2M/upload_max_filesize = 9M/' /etc/php5/apache2/php.ini
+sudo service apache2 restart
+
 echo "Your Virtual Machine is now ready, thank you for installing Project Deviant by David C. Rynearson at ASU OKED"
 exit
