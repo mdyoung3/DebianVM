@@ -77,38 +77,39 @@ else
   fi
 fi
 
+function pause(){
+   read -p "$*"
+}
+
+pause "Press [Enter] to begin the install of Drupal."
 drush dl drupal
 rm -r /vagrant/$domain_name.dev
 cp /vagrant/drupal-7.* /vagrant/$domain_name.dev
 
-alias site_home="cd /vagrant/$domain_name"
+alias site_home="cd /vagrant/$domain_name.dev"
 site_home 
 
-echo "Do you have a database username yet? Enter yes/no."
-read db_urn_answer
-
-if [$db_urn_answer == 'yes']
-then
-	echo "Enter your database username please"
-	read db_user
-else
-	
-
-
+echo "Please enter your database user name"
+read db_un
 
 echo "Please enter your database user password"
 read db_pw
 
-mysqladmin -u -p create 
-#create up database
-#mysql
-
-
-
 echo "please enter your port"
 read user_port
 
-drush si --db-url=mysql://$db_user:$db_pw@localhost:$user_port/database --account-name=ovprea --account-pass=password  --site-name=Site Name
+echo "please enter the password you want to use for the drupal development site"
+read drupal_password
+
+#pause 'Press [Enter] key to continue...'
+
+#create up database
+#mysql
+
+mysqladmin -u $db_un -p $db_pw dev_$domain_name
+
+drush si --db-url=mysql://$db_un:$db_pw@localhost:$user_port/dev_$domain_name --account-name=ovprea --account-pass=$drupal_password  --site-name=$
+
 
 echo "Installation Complete, please enjoy your new Drupal installation"
 exit
