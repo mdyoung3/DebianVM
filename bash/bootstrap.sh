@@ -95,7 +95,6 @@ then
 	sudo apt-get -y install phpmyadmin
 fi
 
-<<<<<<< HEAD:bootstrap.sh
 # Switch on garabage collection for Drupal and configure PHP
 
     sudo sed -i s/'session.gc_probability = 0'/'session.gc_probability = 1'/ /etc/php5/apache2/php.ini
