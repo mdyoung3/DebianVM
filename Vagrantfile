@@ -4,6 +4,9 @@
 VAGRANTFILE_API_VERSION = "2"
 
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
+ config.ssh.username = 'root'
+config.ssh.password = 'vagrant'
+config.ssh.insert_key = 'true'
   config.vm.box = "chef/debian-6.0.8"
   config.vm.provision :shell, path: "bootstrap.sh"
   config.vm.network :forwarded_port, host: 4567, guest: 80
@@ -11,5 +14,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.provider "virtualbox" do |v| 
     v.customize ["modifyvm", :id, "--natdnshostresolver1", "on"] 
     v.customize ["modifyvm", :id, "--natdnsproxy1", "on"] 
+    v.memory = 2028
+    v.cpus = 2
   end
 end
