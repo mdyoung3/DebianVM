@@ -44,3 +44,9 @@ Thumbs.db
 
 projects/*/sites/*/files
 projects/*/sites/*/private
+*.tar.gz
+*.dev
+*.sql.gz
+*.txt
+db_backup
+modules_examples

@@ -8,8 +8,8 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 config.ssh.password = 'vagrant'
 config.ssh.insert_key = 'true'
   config.vm.box = "chef/debian-6.0.8"
-  config.vm.provision :shell, path: "bootstrap.sh"
-  config.vm.network :forwarded_port, host: 4567, guest: 80
+  config.vm.provision :shell, path: "bash/bootstrap.sh"
+  config.vm.network :forwarded_port, host: 3434, guest: 80
   config.ssh.forward_agent = true
   config.vm.provider "virtualbox" do |v| 
     v.customize ["modifyvm", :id, "--natdnshostresolver1", "on"] 
