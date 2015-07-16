@@ -117,7 +117,7 @@ printf "user=root\n" >> ~/.my.cnf
 printf "password=oked_dev\n" >> ~/.my.cnf
 
 
-sudo ln -fs /vagrant /var/www/projects
+sudo ln -fs /vagrant /var/www/
 
 ##Recreate databases if file exists
 #Check if a file exists first.
