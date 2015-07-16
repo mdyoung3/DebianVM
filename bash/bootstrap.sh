@@ -58,7 +58,7 @@ sudo mysql -uroot -p$DBPASSWD -e "grant all privileges on $DBNAME.* to 'root'@'l
 ##Install PHP
 echo "Begninning PHP installation"
     sudo apt-get install -y -f php5 php-pear php5-suhosin php5-mysql
-    service apache2 restart
+    sudo service apache2 restart
     if php -v 
     then
         echo "Php is now installed successfully"
@@ -105,20 +105,19 @@ fi
 
 
 ## Creating cronjob for database backup.
-crontab -l > mycron
-#echo new cron into cron file
-echo "0 */2 * * * /vagrant/db-backup.sh" >> mycron
-#install new cron file
-crontab mycron
-rm mycron
+    #echo new cron into cron file
+        echo "0 */2 * * * /vagrant/db-backup.sh" >> mycron
+    #install new cron file
+        crontab mycron
+        rm mycron
 
 touch ~/.my.cnf
 printf "[mysqldump]\n" >> ~/.my.cnf
 printf "user=root\n" >> ~/.my.cnf
 printf "password=oked_dev\n" >> ~/.my.cnf
 
-sudo rm -rf /var/www
-sudo ln -fs /vagrant /var/www
+
+sudo ln -fs /vagrant /var/www/projects
 
 ##Recreate databases if file exists
 #Check if a file exists first.

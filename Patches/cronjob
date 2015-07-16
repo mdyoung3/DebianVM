@@ -1,0 +1,2 @@
+#Run a cronjob every 2 hours for database backup
+0 */2 * * * /vagrant/db-backup.sh
