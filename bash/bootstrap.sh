@@ -30,12 +30,10 @@ sudo apt-get update
 
 #Configure Apache2
     sudo a2enmod rewrite
-    sudo a2enmod headers
     sudo sed -i 11s/None/All/ /etc/apache2/sites-available/default
     sudo service apache2 restart
 
 #Install assorted tools for version control and file editing
-    sudo apt-get install -y unzip
     sudo apt-get install -y -f vim curl git debconf-utils
     if git --version 
     then
@@ -43,8 +41,6 @@ sudo apt-get update
     else
         echo "Vim, Curl, and Git, Failed to Install"
     fi
-## Git global config ##
-git config --global core.excludesfile /vagrant/.gitignore_global
 
 echo -e "\n--- Install MySQL specific packages and settings ---\n"
 sudo debconf-set-selections <<< 'mysql-server mysql-server/root_password password oked_dev'
@@ -58,7 +54,7 @@ sudo mysql -uroot -p$DBPASSWD -e "grant all privileges on $DBNAME.* to 'root'@'l
 ##Install PHP
 echo "Begninning PHP installation"
     sudo apt-get install -y -f php5 php-pear php5-suhosin php5-mysql
-    sudo service apache2 restart
+    service apache2 restart
     if php -v 
     then
         echo "Php is now installed successfully"
@@ -67,7 +63,7 @@ echo "Begninning PHP installation"
     fi
 
 #Installing PhpMyAdmin
-if [ ! -f /etc/phpmyadmin/config.inc.php ] ;
+if [ ! -f /etc/phpmyadmin/config.inc.php ];
 then
 
 	# Used debconf-get-selections to find out what questions will be asked
@@ -95,45 +91,18 @@ then
 	sudo apt-get -y install phpmyadmin
 fi
 
-# Switch on garabage collection for Drupal and configure PHP
-
-    sudo sed -i s/'session.gc_probability = 0'/'session.gc_probability = 1'/ /etc/php5/apache2/php.ini
-    sudo sed -i s/'upload_max_filesize = 2M'/'upload_max_filesize = 8M'/ /etc/php5/apache2/php.ini
-    sudo service apache2 restart
-
-
-
-
-## Creating cronjob for database backup.
-    #echo new cron into cron file
-        echo "0 */2 * * * /vagrant/db-backup.sh" >> mycron
-    #install new cron file
-        crontab mycron
-        rm mycron
-
-touch ~/.my.cnf
-printf "[mysqldump]\n" >> ~/.my.cnf
-printf "user=root\n" >> ~/.my.cnf
-printf "password=oked_dev\n" >> ~/.my.cnf
-
-sudo rm -r /var/www/
+sudo rm -rf /var/www
 sudo ln -fs /vagrant /var/www
 
-##Recreate databases if file exists
-#Check if a file exists first.
-if [ -f /vagrant/Backups/*.sql ] ;
-then
-   echo "Found a Database, importing into mysql"
-   #Store that file in a variable
-   BACKUP=$( ls /vagrant/Backups/*.sql -1t | head -n 1)
-   #Do the backup with standard user/pass for mysql
-   mysql --user=root --password=oked_dev < $BACKUP
-   echo "SQL Dump recreation successful, please enjoy"
-   #TODO Check for Database already and verify after the fact.
-else
-   echo "No Database backup Found"
-fi
+sudo apt-get -y install zip
+sudo apt-get -y install unzip
+sudo apt-get -y install sl
 
 
-echo "Your Virtual Machine is now ready, thank you for installing Project Deviant by David C. Rynearson at ASU OKED"
+sudo sed -i 's/upload_max_filesize = 2M/upload_max_filesize = 9M/' /etc/php5/apache2/php.ini
+sudo service apache2 restart
+
+echo "Your Virtual Machine is now ready, thank you for installing Project Deviant by David C. Rynearson at ASU OKED
+
+Be sure to implement Drupal-addon.sh and module.sh to quickly spin up a Drupal site. "
 exit
