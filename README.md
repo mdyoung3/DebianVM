@@ -16,7 +16,7 @@ https://www.virtualbox.org/wiki/Download_Old_Builds_4_3 <br />
 General commands are:
 Run Git Bash as Admin
 
-git clone https://github.com/The-Outrider/DebianVM.git <br />
+git clone https://github.com/mdyoung3/DebianVM.git <br />
 cd DebianVM <br />
 vagrant up <br />
 (wait) <br />
